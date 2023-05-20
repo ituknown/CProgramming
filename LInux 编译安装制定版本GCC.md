@@ -148,7 +148,3 @@ Thread model: posix
 Supported LTO compression algorithms: zlib
 gcc version 11.3.0 (GCC)
 ```
-
-|**NOTE**|
-|:-------|
-|在使用时应该根据实际需要判断是否应该将构建的 GCC 加入环境变量中！|
