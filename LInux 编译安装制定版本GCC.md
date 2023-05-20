@@ -72,6 +72,66 @@ $ sudo make && sudo make install
 
 之后就是一个漫长的等待过程，Two Thousand Years Later～
 
+## configure 参数说明
+
+上述命令执行完成之后，会将应用程序安装到 /usr/local 目录下，对应的二进制文件会安装到 bin 目录下。因此，当你构建完成之后就会发现 gcc 和 g++ 等软件都在 /usr/local/bin 目录下：
+
+```bash
+$ which gcc g++ cpp
+/usr/local/bin/gcc
+/usr/local/bin/g++
+/usr/local/bin/cpp
+```
+
+这些都是 configure 参数的默认选项，具体可以使用 `--help` 命令查看，下面是部分需要注意的可选参数：
+
+```bash
+$ sudo ../gcc-11.3.0/configure --help
+
+Installation directories:
+  --prefix=PREFIX         install architecture-independent files in PREFIX
+                          [/usr/local]
+  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
+                          [PREFIX]
+Fine tuning of the installation directories:
+  --bindir=DIR            user executables [EPREFIX/bin]
+  --sbindir=DIR           system admin executables [EPREFIX/sbin]
+  --libdir=DIR            object code libraries [EPREFIX/lib]
+  --includedir=DIR        C header files [PREFIX/include]
+  --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]
+
+Program names:
+  --program-prefix=PREFIX            prepend PREFIX to installed program names
+  --program-suffix=SUFFIX            append SUFFIX to installed program names
+  --program-transform-name=PROGRAM   run sed PROGRAM on installed program names
+```
+
+现在就解释了为什么构建后的应用程序会在 /usr/local/bin 目录下了。在通常情况下这些参数直接使用默认值即可，不过如果需要构建多个版本的 GCC 我觉得有必要使用 `--program-suffix` 参数。
+
+比如我们现在构建了 GCC-11 这个版本，对应的应用程序安装到 /usr/local/bin 目录下。之后如果想再构建一个 GCC-12 呢？应用程序也被安装到 /usr/local/bin 目录下，等等... 似乎好像有些问题？现在 /usr/local/bin 目录下的 gcc/g++ 到底是哪个版本呢？具体就要去验证下了。
+
+解决这个问题我觉得很简单，在构建时使用 `--program-suffix=` 参数为构建后的程序名加个后缀即可。譬如上面构建的 GCC-11，我加上一个 `-11` 后缀，生成的应用程序就不是 gcc 而是 gcc-11 了：
+
+```bash
+$ sudo ../gcc-11.3.0/configure --program-suffix=-11 --enable-checking=release --enable-languages=c,c++ --disable-multilib
+```
+
+之后如果想要构建 GCC-12 继续增加一个后缀就能解决名字冲突的问题了：
+
+```bash
+$ sudo ../gcc-12.3.0/configure --program-suffix=-12 --enable-checking=release --enable-languages=c,c++ --disable-multilib
+```
+
+当然，在使用时就没办法直接使用 `gcc` 命令了，而是 `gcc-11` 命令。解决办法也很简单，建一个软链接不就好了：
+
+```bash
+# 使用 gcc-11
+$ sudo ln -sf /usr/local/bin/gcc-11 /usr/local/bin/gcc
+
+# 使用 gcc-12
+$ sudo ln -sf /usr/local/bin/gcc-12 /usr/local/bin/gcc
+```
+
 # 查看 GCC 版本
 
 编译安装完成之后就可以看到构建的版本信息了：
