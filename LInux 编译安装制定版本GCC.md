@@ -15,7 +15,7 @@ $ sudo apt install -y gcc make wget
 
 # 下载制定版本 GCC
 
-编译安装 GCC 需要提前到 GCC 官网镜像站（https://gcc.gnu.org/mirrors.html）下载指定版本的 GCC 源码安装包。需要说明的是，每个版本通常都包含 2 种格式的压缩包，分别为 tar.gz 和 tar.xz。只是压缩格式不同，随意选择即可。这里以 tar.gz 压缩包为例。
+编译安装 GCC 需要提前到 GCC 官网镜像站（[https://gcc.gnu.org/mirrors.html](https://gcc.gnu.org/mirrors.html)）下载指定版本的 GCC 源码安装包。需要说明的是，每个版本通常都包含 2 种格式的压缩包，分别为 tar.gz 和 tar.xz。只是压缩格式不同，随意选择即可。这里以 tar.gz 压缩包为例。
 
 GCC 镜像站，根据自己网络情况自行选择，比如这里我选择的是美国洛杉矶镜像站，GCC 版本为 11.3.0：
 
@@ -74,6 +74,20 @@ $ sudo make && sudo make install
 
 # 查看 GCC 版本
 
+编译安装完成之后就可以看到构建的版本信息了：
+
 ```bash
-$ gcc --version
+$ gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/local/libexec/gcc/x86_64-pc-linux-gnu/11.3.0/lto-wrapper
+Target: x86_64-pc-linux-gnu
+Configured with: ../gcc-11.3.0/configure --enable-checking=release --enable-languages=c,c++ --disable-multilib
+Thread model: posix
+Supported LTO compression algorithms: zlib
+gcc version 11.3.0 (GCC)
 ```
+
+|**NOTE**|
+|:-------|
+|在使用时应该根据实际需要判断是否应该将构建的 GCC 加入环境变量中！|
