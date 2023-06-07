@@ -13,7 +13,7 @@ $ sudo apt install -y gcc make wget
 ```
 
 
-# 下载制定版本 GCC
+# 下载指定版本 GCC
 
 编译安装 GCC 需要提前到 GCC 官网镜像站（[https://gcc.gnu.org/mirrors.html](https://gcc.gnu.org/mirrors.html)）下载指定版本的 GCC 源码安装包。需要说明的是，每个版本通常都包含 2 种格式的压缩包，分别为 tar.gz 和 tar.xz。只是压缩格式不同，随意选择即可。这里以 tar.gz 压缩包为例。
 
@@ -52,8 +52,8 @@ $ sudo ./contrib/download_prerequisites
 
 ```bash
 $ cd /usr/local
-$ sudo mkdir gcc-build-11.3.0
-$ cd gcc-build-11.3.0
+$ sudo mkdir gcc-11.3.0-build
+$ cd gcc-11.3.0-build
 ```
 
 #  编译安装
