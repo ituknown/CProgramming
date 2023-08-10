@@ -29,7 +29,9 @@ $ ./bootstrap-vcpkg.sh
 .\bootstrap-vcpkg.bat
 ```
 
-命令执行完成后，会在当前目录下生成 vcpkg 或 vcpkg.exe 文件，之后直接使用该程序即可。不过我比较喜欢直接配置到环境变量中，以便于在任何位置执行，下面是 UNIX-Like 环境变了配置示例：
+命令执行完成后，会在当前目录下生成 vcpkg 或 vcpkg.exe 文件，之后直接使用该程序即可。
+
+不过我比较喜欢配置到环境变量中，以便于后续可以在任何位置执行，下面是 UNIX-Like 环境变量配置示例：
 
 ```bash
 export VCPKG_ROOT=/Users/ituknown/Vcpkg
@@ -140,13 +142,13 @@ target_link_libraries(example_vcpkg PRIVATE ZLIB::ZLIB) # 将 main 替换为 exa
 
 # 常见问题
 
-- Could not find pkg-config.  Please install it via your package manager...
+- Could not find pkg-config.  Please install it via your package manager.
 
-缺少 pkg-config，一般会在后面提示具体的安装命令，安装即可。如 mac：
+  原因是缺少pkg-config，一般会提示如何安装，安装即可。如 mac：
 
-```bash
-$ brew install pkg-config
-```
+  ```bash
+  $ brew install pkg-config
+  ```
 
 
 
