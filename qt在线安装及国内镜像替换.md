@@ -23,7 +23,7 @@ installer --mirror [镜像地址]
 | **镜像站** | **镜像地址**                                                 |
 | :--------- | :----------------------------------------------------------- |
 | 南京大学   | [https://mirror.nju.edu.cn/qt](https://mirror.nju.edu.cn/qt) |
-| 清华大学   | [http://mirrors.tuna.tsinghua.edu.cn/qt](http://mirrors.tuna.tsinghua.edu.cn/qt) |
+| 清华大学   | [https://mirrors.tuna.tsinghua.edu.cn/qt](http://mirrors.tuna.tsinghua.edu.cn/qt) |
 | 阿里云     | [https://mirrors.aliyun.com/qt](https://mirrors.aliyun.com/qt) |
 | 腾讯云     | [https://mirrors.cloud.tencent.com/qt](https://mirrors.cloud.tencent.com/qt) |
 
