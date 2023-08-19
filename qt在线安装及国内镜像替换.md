@@ -43,11 +43,11 @@ installer --mirror [镜像地址]
 
 双击 **online-installer.dmg** 文件 - **右键 online-install.app** - 选择 **显示包内容**：
 
-![http://cpp-media.knowledge.ituknown.cn/qt/online_installers/mac_set_mirror/show-package-contents.png](http://cpp-media.knowledge.ituknown.cn/qt/online_installers/mac_set_mirror/show-package-contents.png)
+![show-package-contents.png](http://cpp-media.knowledge.ituknown.cn/qt/online_installers/mac_set_mirror/show-package-contents.png)
 
 之后进入 MacOS 文件夹，将 qt-unified-macOS-x64-online 安装程序拖到终端去，再指定镜像地址即可：
 
-![http://cpp-media.knowledge.ituknown.cn/qt/online_installers/mac_set_mirror/setup-mirror.png](http://cpp-media.knowledge.ituknown.cn/qt/online_installers/mac_set_mirror/setup-mirror.png)
+![set-mirror.png](http://cpp-media.knowledge.ituknown.cn/qt/online_installers/mac_set_mirror/set-mirror.png)
 
 之后就会出现安装器界面，登录后选择组件进行安装即可。
 
