@@ -35,21 +35,19 @@ installer --mirror [镜像地址]
 
 之后就会出现安装器界面，登录后选择组件进行安装即可，可以看到使用镜像地址后网络带宽可以直接拉满：
 
-<img src="http://cprogramming-media.knowledge.ituknown.cn/qt/online_installers/windows_installing.png" alt="windows_installing.png" width="500">
-
+![windows_installing.png](http://cprogramming-media.knowledge.ituknown.cn/qt/online_installers/windows_installing.png)
 
 --
-
 
 
 如果是 Mac 用户，无法直接使用上面的方法。需要按照如下步骤进行：
 
 双击 **online-installer.dmg** 文件 » **右键 online-install.app** » 选择 **显示包内容**：
 
-<img src="http://cprogramming-media.knowledge.ituknown.cn/qt/online_installers/mac_show_package_contents.png" alt="mac_show_package_contents.png" width="500">
+![mac_show_package_contents.png](http://cprogramming-media.knowledge.ituknown.cn/qt/online_installers/mac_show_package_contents.png)
 
 之后进入 MacOS 文件夹，将 qt-unified-macOS-x64-online 安装程序拖到终端去，再指定镜像地址即可：
 
-<img src="http://cprogramming-media.knowledge.ituknown.cn/qt/online_installers/mac_set_mirror.png" alt="mac_set_mirror.png" width="500">
+![mac_set_mirror.png](http://cprogramming-media.knowledge.ituknown.cn/qt/online_installers/mac_set_mirror.png)
 
 之后就会出现安装器界面，登录后选择组件进行安装即可。
