@@ -33,9 +33,15 @@ installer --mirror [镜像地址]
 .\qt-unified-windows-x64-online.exe --mirror https://mirror.nju.edu.cn/qt
 ```
 
-之后就会出现安装器界面，登录后选择组件进行安装即可，可以看到使用镜像地址后网络带宽可以直接拉满：
+之后就会出现安装器界面，登录后在“组件选择”界面选择具体的安装版本：
 
-![windows_installing.png](http://cprogramming-media.knowledge.ituknown.cn/qt/online_installers/windows_installing.png)
+![selecting-components.png](http://cprogramming-media.knowledge.ituknown.cn/qt/online_installers/selecting-components.png)
+
+默认情况下，Qt只会显示最后支持的Release版本。如果想要安装历史版本（如Qt4）勾选 Archive 然后点击筛选，左侧就会列出所有的归档版本了~
+
+点击下一步，同意Qt协议之后就可以进行安装了。可以看到使用镜像地址后网络带宽直接拉满：
+
+![installing.png](http://cprogramming-media.knowledge.ituknown.cn/qt/online_installers/installing.png)
 
 --
 
