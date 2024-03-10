@@ -12,9 +12,9 @@
 
 槽的本质是类的成员函数，其参数可以是任意类型的，和普通C++成员函数几乎没有区别。它可以是虚函数、也可以被重载；可以是 public、protected、private；也可以被其他C++成员函数调用。唯一区别的是：槽可以与信号连接在一起，每当和槽连接的信号被发射的时候，就会调用这个槽。
 
-# 信号声明
+# 信号
 
-信号与普通函数的区别是：信号必须使用 `signals` 宏修饰，只有声明不能有具体的实现。另外，信号的返回类型都是 void，不要指望能从信号返回什么有用信息。信号由 moc 自动产生，它们不应该在 .cpp 文件中实现。
+信号与普通函数的区别是：信号必须使用 `signals` 宏修饰，只有声明不能有具体的实现。另外，信号的返回类型都是 void，不要指望能从信号返回什么有用信息。最重要的一点是，不能在源文件中进行实现，因为信号由 moc 自动生成。
 
 ```c++
 // Example.h
@@ -31,7 +31,7 @@ class ExampleSignal : public QObject {
 }
 ```
 
-如果在源文件中进行实现（如下）。在编译时就会出现链接错误，并提示重复的符号定义。 
+如果在源文件中进行实现（如下）。在编译时就会出现链接错误，通常的错误信息是：重复的符号定义。 
 
 ```c++
 // Example.cpp
@@ -64,7 +64,7 @@ class ExampleSignal : public QObject {
 }
 ```
 
-# 槽的声明
+# 槽
 
 槽是普通的 C++ 成员函数，可以被正常调用，它们唯一的特殊性就是很多信号可以与其相关联。当与其关联的信号被发射时，这个槽就会被调用。
 
@@ -94,21 +94,20 @@ class ExampleSlot : public QObject {
 }
 ```
 
-# 信号与槽的连接
+# 连接信号与槽
 
-通过调用 QObject 对象的 connect 函数来将某个对象的信号与另外一个对象的槽函数相关联，这样当发射者发射信号时，接收者的槽函数将被调用。该函数的定义如下：
+通过调用 QObject 对象的 connect 函数来将某个对象的信号与另外一个对象的槽函数相关联，这样当发送者发射信号时，接收者的槽函数将被调用。connect 有多个重载的版本，下面是其中一个示例：
 
 ```c++
 static QMetaObject::Connection connect(
     const QObject *sender, 
     const QMetaMethod &signal, 
     const QObject *receiver, 
-    const QMetaMethod &method, 
-    Qt::ConnectionType type = Qt::AutoConnection
+    const QMetaMethod &member
 );
 ```
 
-这个函数的作用就是将发射者 sender 对象中的信号 signal 与接收者 receiver 中的 method 槽函数联系起来。
+这个函数的作用就是将发射者 sender 对象中的信号 signal 与接收者 receiver 中的 member 槽函数联系起来。
 
 # 最简单的信号和槽
 
