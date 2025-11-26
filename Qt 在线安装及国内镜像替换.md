@@ -35,25 +35,24 @@ installer --mirror [镜像地址]
 
 之后就会出现安装器界面，登录后在“组件选择”界面选择具体的安装版本：
 
-<img alt="selecting_components.png" src="https://ituknown.org/cprogramming-media/qt/online_installers/selecting_components.png" width=500>
+<img alt="selecting_components.png" src="https://media.ituknown.org/cprogramming-media/qt/online_installers/selecting_components.png" width=500>
 
 默认情况下，Qt只会显示最后支持的Release版本。如果想要安装历史版本（如Qt4）勾选 Archive 然后点击筛选，左侧就会列出所有的归档版本了~
 
 点击下一步，同意Qt协议之后就可以进行安装了。可以看到使用镜像地址后网络带宽直接拉满：
 
-<img alt="installing.png" src="https://ituknown.org/cprogramming-media/qt/online_installers/installing.png" width=500>
+<img alt="installing.png" src="https://media.ituknown.org/cprogramming-media/qt/online_installers/installing.png" width=500>
 
 --
-
 
 如果是 Mac 用户，无法直接使用上面的方法。需要按照如下步骤进行：
 
 双击 **online-installer.dmg** 文件 » **右键 online-install.app** » 选择 **显示包内容**：
 
-<img alt="mac_show_package_contents.png" src="https://ituknown.org/cprogramming-media/qt/online_installers/mac_show_package_contents.png" width=500>
+<img alt="mac_show_package_contents.png" src="https://media.ituknown.org/cprogramming-media/qt/online_installers/mac_show_package_contents.png" width=500>
 
 之后进入 MacOS 文件夹，将 qt-unified-macOS-x64-online 安装程序拖到终端去，再指定镜像地址即可：
 
-<img alt="mac_set_mirror.png" src="https://ituknown.org/cprogramming-media/qt/online_installers/mac_set_mirror.png" width=500>
+<img alt="mac_set_mirror.png" src="https://media.ituknown.org/cprogramming-media/qt/online_installers/mac_set_mirror.png" width=500>
 
 之后就会出现安装器界面，登录后选择组件进行安装即可。
